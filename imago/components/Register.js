@@ -11,18 +11,30 @@ export default function Register() {
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [error, setError] = useState(false)
 
     const onPressLogin = () => {
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then((result) => {
                 console.log(result)
             })
-            .then((error) => { console.log(error) })
+            .catch((error) => {
+                console.log(error)
+                setError(true)
+                setTimeout(() => {
+                    setError(false)
+                }, 3000);
+            })
+
+        setEmail("")
+        setPassword("")
+        setUsername("")
     }
 
     const onPass = () => {
         show ? setShow(false) : setShow(true)
     }
+
     return (
         <View style={styles.container}>
             <AntDesign name="pluscircleo" size={94} color="purple" />
@@ -30,9 +42,9 @@ export default function Register() {
             <View style={styles.inputCont}>
                 <TextInput value={username} onChangeText={text => setUsername(text)}
                     style={styles.text} placeholder="Username"></TextInput>
-                <TextInput onChangeText={text => setEmail(text)}
+                <TextInput value={email} onChangeText={text => setEmail(text)}
                     style={styles.text} placeholder="Email" />
-                <TextInput onChangeText={text => setPassword(text)}
+                <TextInput value={password} onChangeText={text => setPassword(text)}
                     textContentType='password'
                     style={styles.text} placeholder="Password"></TextInput>
                 <FontAwesome onPress={onPass} style={styles.eyeIcons}
@@ -48,6 +60,9 @@ export default function Register() {
                     title="Submit"
                 />
             </View>
+            {error &&
+                <Text style={styles.forget}>Incorrect Credentials !!!</Text>
+            }
         </View>
     )
 }
