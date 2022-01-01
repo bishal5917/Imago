@@ -2,12 +2,24 @@ import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput, Button } from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 
 export default function Register() {
     const [show, setShow] = useState(false)
+    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
     const onPressLogin = () => {
-        console.log("Submitted")
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then((result) => {
+                console.log(result)
+            })
+            .then((error) => { console.log(error) })
     }
+
     const onPass = () => {
         show ? setShow(false) : setShow(true)
     }
@@ -16,9 +28,12 @@ export default function Register() {
             <AntDesign name="pluscircleo" size={94} color="purple" />
             <Text style={styles.login}>Register</Text>
             <View style={styles.inputCont}>
-                <TextInput style={styles.text} placeholder="Username"></TextInput>
-                <TextInput style={styles.text} placeholder="Email"></TextInput>
-                <TextInput textContentType='password'
+                <TextInput value={username} onChangeText={text => setUsername(text)}
+                    style={styles.text} placeholder="Username"></TextInput>
+                <TextInput onChangeText={text => setEmail(text)}
+                    style={styles.text} placeholder="Email" />
+                <TextInput onChangeText={text => setPassword(text)}
+                    textContentType='password'
                     style={styles.text} placeholder="Password"></TextInput>
                 <FontAwesome onPress={onPass} style={styles.eyeIcons}
                     name={show ? "eye" : "eye-slash"}
