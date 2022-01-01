@@ -33,9 +33,9 @@ if (firebase.apps.length === 0) {
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='first'>
+      <Stack.Navigator initialRouteName='home'>
         <Stack.Screen name="Login/Register" component={First} />
-        <Stack.Screen name="home" component={Home} />
+        <Stack.Screen name="home" component={Home} options={{ headerShown: false }} />
         <Stack.Screen name="login" component={Login} />
         <Stack.Screen name="register" component={Register} />
       </Stack.Navigator>
@@ -46,7 +46,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   },
