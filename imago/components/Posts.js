@@ -17,7 +17,11 @@ export default function Posts() {
                 </View>
             </View>
             <View style={styles.postImg}>
-
+                <Image style={styles.pimg}
+                    source={{ uri: "https://wallpaperaccess.com/full/152508.jpg" }} />
+            </View>
+            <View style={styles.postFooter}>
+                
             </View>
         </>
     )
@@ -30,8 +34,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between"
-
-
     },
     left: {
         display: "flex",
@@ -46,6 +48,12 @@ const styles = StyleSheet.create({
         color: "white",
         fontSize: 17,
         fontWeight: "bold"
+    },
+    pimg: {
+        height: 400,
+        width: '100%',
+        resizeMode: "cover"
+
     },
     pics: {
         height: 40,
