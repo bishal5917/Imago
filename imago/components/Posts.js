@@ -8,41 +8,47 @@ import { Ionicons } from '@expo/vector-icons';
 export default function Posts() {
     return (
         <>
-            <View style={styles.postHeader}>
-                <View style={styles.left}>
-                    <Image style={styles.pics}
-                        source={{ uri: "https://i1.sndcdn.com/artworks-000599467910-5dnqw8-t500x500.jpg" }} />
-                    <Text style={styles.text}>Itachi_Uchiha</Text>
+            <View style={styles.postCont}>
+                <View style={styles.postHeader}>
+                    <View style={styles.left}>
+                        <Image style={styles.pics}
+                            source={{ uri: "https://i1.sndcdn.com/artworks-000599467910-5dnqw8-t500x500.jpg" }} />
+                        <Text style={styles.text}>Itachi_Uchiha</Text>
+                    </View>
+                    <View style={styles.right}>
+                        <Entypo name="dots-three-horizontal" size={24} color="white" />
+                    </View>
                 </View>
-                <View style={styles.right}>
-                    <Entypo name="dots-three-horizontal" size={24} color="white" />
+                <View style={styles.postImg}>
+                    <Image style={styles.pimg}
+                        source={{ uri: "https://wallpaperaccess.com/full/152508.jpg" }} />
                 </View>
-            </View>
-            <View style={styles.postImg}>
-                <Image style={styles.pimg}
-                    source={{ uri: "https://wallpaperaccess.com/full/152508.jpg" }} />
-            </View>
-            <View style={styles.postFooter}>
-                <View style={styles.icos}>
-                    <TouchableOpacity>
-                        <AntDesign style={styles.ico} name="hearto" size={25} color="white" />
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <Ionicons style={styles.ico} name="chatbubble-outline" size={25} color="white" />
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <SimpleLineIcons style={styles.ico} name="cursor" size={25} color="white" />
-                    </TouchableOpacity>
-                </View>
-                <View>
-                    <Text style={styles.likeShow}>71,256 likes</Text>
-                </View>
-                <View style={styles.caption}>
-                    <Text style={styles.cap}>Only those who are acknowledged by the people
-                        can become the hokage !!!</Text>
-                </View>
-                <View>
-                    <Text style={styles.likeShow}>View all 2 comments</Text>
+                <View style={styles.postFooter}>
+                    <View style={styles.icos}>
+                        <TouchableOpacity>
+                            <AntDesign style={styles.ico} name="hearto" size={25} color="white" />
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <Ionicons style={styles.ico} name="chatbubble-outline" size={25} color="white" />
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <SimpleLineIcons style={styles.ico} name="cursor" size={25} color="white" />
+                        </TouchableOpacity>
+                    </View>
+                    <View>
+                        <Text style={styles.likeShow}>71,256 likes</Text>
+                    </View>
+                    <View style={styles.caption}>
+                        <Text style={styles.cap}>Only those who are acknowledged by the people
+                            can become the hokage !!!</Text>
+                    </View>
+                    <View>
+                        <Text style={styles.likeShow}>View all 2 comments</Text>
+                    </View>
+                    <View style={styles.caption}>
+                        <Text style={styles.text}>Uchiha_shisui</Text>
+                        <Text style={styles.cap}>Thats my bro !</Text>
+                    </View>
                 </View>
             </View>
         </>
@@ -56,6 +62,10 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between"
+    },
+    postCont: {
+        borderBottomColor: 'teal',
+        borderBottomWidth: 0.3,
     },
     left: {
         display: "flex",
@@ -79,14 +89,14 @@ const styles = StyleSheet.create({
         color: "white",
         marginLeft: 7,
         marginTop: 3,
-        fontSize:16
+        fontSize: 16
 
     },
     likeShow: {
         color: "white",
         marginLeft: 7,
         marginTop: 3,
-        opacity:54
+        opacity: 54
 
     },
     text: {
@@ -96,6 +106,9 @@ const styles = StyleSheet.create({
     },
     caption: {
         display: "flex",
+        flexDirection: "row",
+        marginLeft: 7,
+        marginTop: 3,
     },
     pimg: {
         height: 400,

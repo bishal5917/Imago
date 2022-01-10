@@ -18,6 +18,8 @@ export default function Home() {
 
             <ScrollView>
                 <Posts />
+                <Posts />
+                <Posts />
             </ScrollView>
         </View>
     )

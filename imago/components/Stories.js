@@ -48,10 +48,10 @@ const styles = StyleSheet.create({
         color: "white"
     },
     pics: {
-        height: 80,
-        width: 80,
+        height: 60,
+        width: 60,
         borderRadius: 50,
-        borderWidth: 3,
+        borderWidth: 2,
         borderColor: "#e319a6"
 
     },
