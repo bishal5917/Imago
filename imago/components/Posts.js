@@ -87,8 +87,8 @@ const styles = StyleSheet.create({
     },
     cap: {
         color: "white",
-        marginLeft: 7,
         marginTop: 3,
+        marginBottom: 3,
         fontSize: 16
 
     },
@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
     caption: {
         display: "flex",
         flexDirection: "row",
+        alignItems: "center",
         marginLeft: 7,
         marginTop: 3,
     },
