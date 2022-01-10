@@ -1,6 +1,7 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, ScrollView } from 'react-native'
 import Header from './Header'
+import Posts from './Posts';
 import Stories from './Stories';
 
 export default function Home() {
@@ -8,6 +9,18 @@ export default function Home() {
         <View style={styles.container}>
             <Header />
             <Stories />
+            <View
+                style={{
+                    borderBottomColor: 'white',
+                    borderBottomWidth: 0.3,
+                    fontWeight:2
+                  
+                }}
+            />
+
+            <ScrollView>
+                <Posts />
+            </ScrollView>
         </View>
     )
 }
