@@ -13,8 +13,6 @@ export default function Home() {
                 style={{
                     borderBottomColor: 'white',
                     borderBottomWidth: 0.3,
-                    fontWeight:2
-                  
                 }}
             />
 

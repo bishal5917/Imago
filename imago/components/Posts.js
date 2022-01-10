@@ -1,16 +1,18 @@
 import React from 'react'
-import { View, Text, StyleSheet, Image } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import { Entypo } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+import { SimpleLineIcons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function Posts() {
     return (
-        // post header
         <>
             <View style={styles.postHeader}>
                 <View style={styles.left}>
                     <Image style={styles.pics}
                         source={{ uri: "https://i1.sndcdn.com/artworks-000599467910-5dnqw8-t500x500.jpg" }} />
-                    <Text style={styles.text}>Itachi Uchiha</Text>
+                    <Text style={styles.text}>Itachi_Uchiha</Text>
                 </View>
                 <View style={styles.right}>
                     <Entypo name="dots-three-horizontal" size={24} color="white" />
@@ -21,7 +23,27 @@ export default function Posts() {
                     source={{ uri: "https://wallpaperaccess.com/full/152508.jpg" }} />
             </View>
             <View style={styles.postFooter}>
-                
+                <View style={styles.icos}>
+                    <TouchableOpacity>
+                        <AntDesign style={styles.ico} name="hearto" size={25} color="white" />
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Ionicons style={styles.ico} name="chatbubble-outline" size={25} color="white" />
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <SimpleLineIcons style={styles.ico} name="cursor" size={25} color="white" />
+                    </TouchableOpacity>
+                </View>
+                <View>
+                    <Text style={styles.likeShow}>71,256 likes</Text>
+                </View>
+                <View style={styles.caption}>
+                    <Text style={styles.cap}>Only those who are acknowledged by the people
+                        can become the hokage !!!</Text>
+                </View>
+                <View>
+                    <Text style={styles.likeShow}>View all 2 comments</Text>
+                </View>
             </View>
         </>
     )
@@ -44,15 +66,50 @@ const styles = StyleSheet.create({
         display: "flex",
         justifyContent: "flex-end"
     },
+    postFooter: {
+        margin: 5
+    },
+    likeShow: {
+        color: "white",
+        marginLeft: 7,
+        marginTop: 3,
+
+    },
+    cap: {
+        color: "white",
+        marginLeft: 7,
+        marginTop: 3,
+        fontSize:16
+
+    },
+    likeShow: {
+        color: "white",
+        marginLeft: 7,
+        marginTop: 3,
+        opacity:54
+
+    },
     text: {
         color: "white",
         fontSize: 17,
         fontWeight: "bold"
     },
+    caption: {
+        display: "flex",
+    },
     pimg: {
         height: 400,
         width: '100%',
         resizeMode: "cover"
+
+    },
+    icos: {
+        display: "flex",
+        flexDirection: "row"
+
+    },
+    ico: {
+        marginHorizontal: 5
 
     },
     pics: {
